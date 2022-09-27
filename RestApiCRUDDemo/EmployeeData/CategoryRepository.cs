@@ -46,14 +46,15 @@ namespace RestApiCRUDDemo.EmployeeData
 
         public Category EditCategory(Category category)
         {
-            var existingEmployee = _employeeContext.Categories.Find(category.Id);
-            if (existingEmployee != null)
-            {
+            //var existingEmployee = _employeeContext.Categories.Find(category.Id);
+           // if (existingEmployee != null)
+            //{
 
                 _employeeContext.Categories.Update(category);
                 _employeeContext.SaveChanges();
-            }
-            return category;
+            return null;
+        //    }
+            //return category;
         }
         
         public  List<Category> GetAllCategory()

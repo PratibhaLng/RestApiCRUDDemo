@@ -36,6 +36,7 @@ namespace RestApiCRUDDemo
             //services.AddLamar(new ApplicationRegistry());
             services.AddScoped<IEmployeeData, SqlEmployeeData>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddSwaggerGen();
             services.AddSwaggerGen(swag =>
             {

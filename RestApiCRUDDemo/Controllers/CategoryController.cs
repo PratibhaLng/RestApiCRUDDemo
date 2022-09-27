@@ -86,7 +86,7 @@ namespace RestApiCRUDDemo.Controllers
         }
 
         [HttpDelete]
-        [Route("delete/{Id}")]
+        [Route("delete/Id")]
         public IActionResult DeleteCategory(int Id)
             
 
@@ -109,17 +109,17 @@ namespace RestApiCRUDDemo.Controllers
         }
 
 
+        
 
 
-
-        [HttpPatch]
-        [Route("api/[controller]/{Id}")]
-        public IActionResult EditCategory(int id, Category category)
+        [HttpPut]
+        [Route("Edit/Id")]
+        public IActionResult EditCategory( Category category)
 
         {
-            var existingCategory = _ccategory.GetCategory(id);
-            if (existingCategory != null)
-                category.Id = existingCategory.Id;
+            //var existingCategory = _ccategory.GetCategory(id);
+           // if (existingCategory != null)
+             //   category.Id = existingCategory.Id;
             _ccategory.EditCategory(category);
             return Ok(category);
         }

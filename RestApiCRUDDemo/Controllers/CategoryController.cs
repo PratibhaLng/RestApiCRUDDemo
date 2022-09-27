@@ -86,19 +86,26 @@ namespace RestApiCRUDDemo.Controllers
         }
 
         [HttpDelete]
-        [Route("api/[controller]/{Id}")]
-        public IActionResult DeleteCategory(int id)
+        [Route("delete/{Id}")]
+        public IActionResult DeleteCategory(int Id)
             
 
         {
-            var removeCategory = _ccategory.GetCategory(id);
-            if (removeCategory != null)
+            var removeCategory = _ccategory.GetCategory(Id);
+            if (removeCategory == null)
             {
-                _ccategory.DeleteCategory(removeCategory);
-                return Ok();
+
+
+
+                return NotFound($"Category With Id:{Id}  was not found");
             }
 
-            return NotFound($"Category With Id:{id}  was not found");
+            {
+
+                _ccategory.DeleteCategory(Id);
+                return Ok(removeCategory);
+
+            }
         }
 
 

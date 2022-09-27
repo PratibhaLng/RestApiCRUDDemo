@@ -14,7 +14,7 @@ namespace RestApiCRUDDemo.EmployeeData
         Category AddCategory(Category category);
         
 
-        void DeleteCategory(Category category);
+        void DeleteCategory(int  Id);
 
         Category EditCategory(Category category);
 

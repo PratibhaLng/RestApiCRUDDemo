@@ -26,17 +26,18 @@ namespace RestApiCRUDDemo.EmployeeData
         }
 
        
-        public void DeleteCategory(Category category)
+        public void  DeleteCategory(int Id)
         {
 
 
 
-            var result =  _employeeContext.Categories.Where(a => a.Id == category.Id).FirstOrDefault();
+            var result =  _employeeContext.Categories.Where(a => a.Id == Id).FirstOrDefault();
             if (result != null)
             {
 
-                _employeeContext.Categories.Remove(category);
+                _employeeContext.Categories.Remove(result);
                 _employeeContext.SaveChanges();
+                
 
             }
 
